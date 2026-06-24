@@ -1,0 +1,66 @@
+body {
+    background: linear-gradient(45deg, #4158D0 0%, #000000 46%, #7a5cff 100%);
+    background-attachment: fixed; /* Cố định nền khi cuộn trang */
+    color: #fff; /* Đổi màu chữ toàn trang thành trắng cho dễ đọc */
+}
+
+/* 2. HIỆU ỨNG KÍNH MỜ (GLASSMORPHISM) */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.15) !important; /* Nền trắng mờ mờ 15% */
+    backdrop-filter: blur(12px) !important; /* Độ mờ của kính */
+    -webkit-backdrop-filter: blur(12px) !important; /* Hỗ trợ cho Safari */
+    border: 1px solid rgba(255, 255, 255, 0.3) !important; /* Viền sáng lấp lánh nhẹ */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important; /* Đổ bóng nhẹ tạo chiều sâu */
+    border-radius: 16px; /* Bo góc tròn cho thẻ */
+    color: #fff !important; /* Chữ bên trong kính màu trắng */
+}
+
+/* Sửa lại màu chữ của một số thành phần bên trong kính cho dễ đọc */
+.glass-effect .text-muted {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* 3. CÁC THÀNH PHẦN KHÁC */
+.hero {
+    /* Đã xóa nền trắng. Bạn nên thêm class glass-effect vào thẻ div của hero trên HTML luôn cho đẹp */
+    margin-bottom: 30px;
+    border-radius: 16px;
+}
+
+.card {
+    transition: 0.3s ease-in-out; /* Thêm ease-in-out cho hiệu ứng mượt hơn */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2) !important; /* Hover vào thì bóng đổ đậm hơn một chút */
+}
+
+.card img {
+    object-fit: cover;
+}
+
+.navbar {
+    /* Đổi Navbar sang dạng kính đen mờ để hợp với nền tổng thể */
+    background: rgba(33, 37, 41, 0.8) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent; /* Nền trong suốt để không đè lên kính */
+    color: inherit;
+}
+
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    text-align: center;
+    /* Bỏ nền xám đặc, thay bằng nền đen trong suốt để vẫn nhìn thấu được màu gradient */
+    background: rgba(0, 0, 0, 0.4); 
+    color: white;
+    backdrop-filter: blur(5px);
+}
